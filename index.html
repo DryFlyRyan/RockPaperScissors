@@ -1,20 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8">
     <title>Rock, Paper, Scissors</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script>
-      // Task 1: user's choice
-      // Task 2: machine's choice
-      // Task 3: compare choices
-      // Task 4: refactor code
-      // Task 5: add all code here 
+      var userChoice = 
+
+      function computerChoice() {
+        var choice = Math.random();
+        console.log(choice)
+        if (choice <= .33) {
+          return "rock"
+        } else if(choice <= .66) {
+          return "paper"
+        } else {
+          return "scissors"
+        }
+      }
+      var pCChoice = computerChoice()
+
+      function getWinner(userChoice, pCChoice) {
+        if (userChoice === pCChoice) {
+          return "Draw"
+        } else if (userChoice === "paper" && pCChoice === "scissors") {
+          return "Computer Wins!"
+        } else if (userChoice === "paper" && pCChoice === "rock") {
+          return "User Wins"
+        } else if (userChoice === "scissors" && pCChoice === "rock") {
+          return "Computer Wins!"
+        } else if (userChoice === "scissors" && pCChoice === "paper") {
+          return "User Wins"
+        } else if (userChoice === "rock" && pCChoice === "paper") {
+          return "Computer Wins!"
+        } else if (userChoice === "rock" && pCChoice === "scissors") {
+          return "User Wins"
+        } else {
+          return userChoice + " is not a valid option!"
+        }
+      }
+
+      alert(getWinner(userChoice, pCChoice));
+
     </script>
   </head>
-
   <body>
+
+    <h1>Please Choose Rock, Paper, or Scissors</h1>
+
+    <button type="button" name="button">Rock</button>
+    <button type="button" name="button">Paper</button>
+    <button type="button" name="button">Scissors</button>
   </body>
 
 </html>
